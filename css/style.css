@@ -14,16 +14,20 @@ p {
   color: #494949;
 }
 
-.tSlow, button, input,
+.tSlow, .grid-item, button, input,
 select,
 option,
-textarea, .social-network li i, .social-network li, .copy a, .tumblr, nav ul li a:after, nav ul li a:before, nav ul .link-active a:after, nav ul, nav .logo img, nav, .rombo, .diamante, .servicio-img, .rounded-circle, a {
+textarea, .social-network li i, .social-network li, .copy a, .tumblr, nav ul li a:hover:after, nav ul li a:after, nav ul li a:before, nav ul .link-active a:after, nav ul, nav .logo img, nav, .rombo, .diamante, .servicio-img, .rounded-circle, a {
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 
 .p_100 {
   padding: 100px 0px;
+}
+
+.p_200 {
+  padding: 200px 0px;
 }
 
 .center {
@@ -70,6 +74,20 @@ textarea, .social-network li i, .social-network li, .copy a, .tumblr, nav ul li 
   z-index: 50;
 }
 
+.nav-overlay {
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  border-bottom: 1px solid rgba(6, 10, 15, 0.1);
+  padding: 25px 0px;
+}
+.nav-overlay .logo img {
+  width: 80%;
+}
+.nav-overlay ul li a {
+  color: rgba(73, 73, 73, 0.5);
+}
+
 nav {
   width: 100%;
   background-color: transparent;
@@ -80,8 +98,8 @@ nav {
 }
 nav:hover {
   background-color: white;
-  padding: 20px 0px;
-  border: 1px solid rgba(6, 10, 15, 0.1);
+  padding: 25px 0px;
+  border-bottom: 1px solid rgba(6, 10, 15, 0.1);
 }
 nav:hover .logo img {
   width: 80%;
@@ -153,20 +171,6 @@ nav ul li a:hover:before {
 nav ul li a:hover:after {
   width: 100%;
   background-color: #060a0f;
-}
-
-.nav-overlay {
-  background-color: rgba(255, 255, 255, 0.8);
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
-  border-bottom: 1px solid rgba(6, 10, 15, 0.1);
-  padding: 25px 0px;
-}
-.nav-overlay .logo img {
-  width: 80%;
-}
-.nav-overlay ul li a {
-  color: rgba(73, 73, 73, 0.5);
 }
 
 #slider {
@@ -363,4 +367,74 @@ button:hover {
 .black:hover {
   background-color: #ff6500;
   border: 1px solid #ff6500;
+}
+
+.grid {
+  width: 100%;
+  padding: 150px 0px;
+}
+.grid:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.grid-item {
+  width: 20%;
+  padding-bottom: 20%;
+  margin-top: -90px;
+  overflow: hidden;
+  float: left;
+  position: relative;
+  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+          clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  cursor: pointer;
+}
+.grid-item:before {
+  pointer-events: none;
+}
+.grid-item:nth-child(6), .grid-item:nth-child(15) {
+  margin-left: 111px;
+}
+.grid-item a img {
+  width: 100%;
+  height: auto;
+}
+.grid-item:hover:before {
+  content: "";
+  position: absolute;
+  background-color: rgba(255, 101, 0, 0.9);
+  background-image: url(https://www.udemy.joystick.com.mx/images/cross.png);
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+#contacto {
+  width: 100%;
+  height: 100vh;
+}
+#contacto ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+#contacto ul li {
+  float: left;
+  padding: 0px;
+  margin: 0px;
+}
+#contacto ul .google-maps {
+  width: 66.6%;
+  height: 100vh;
+  background-image: url(https://www.udemy.joystick.com.mx/images/maps.jpg);
+  background-position: center;
+  background-size: cover;
+}
+#contacto ul .formulario {
+  width: 33.4%;
+  height: 100vh;
+  padding: 150px 50px;
 }
